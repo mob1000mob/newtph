@@ -1,7 +1,5 @@
 <?php
-$db=mysqli_connect("localhost","root","","portfolio");
-//if($db){
-//    echo "databse is connected !";
-//}else{
-//    echo "something is wrong with database !";
-//
+$conn = mysqli_init();
+mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+mysqli_real_connect($conn, "tphserver.mysql.database.azure.com", "tphadmin", "ThePortfolioHub123", "newserver", 3306, MYSQLI_CLIENT_SSL);
+?>
